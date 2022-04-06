@@ -1,5 +1,7 @@
 package com.example.zooapplication.controller;
 
+import com.example.zooapplication.domain.Caretaker;
+import com.example.zooapplication.domain.Pavilion;
 import com.example.zooapplication.domain.Zoo;
 import com.example.zooapplication.service.ZooService;
 import com.example.zooapplication.service.ZooServiceImpl;
@@ -37,6 +39,17 @@ public class ZooControllerImpl implements ZooController {
         Optional<Zoo> z = zooService.loadZoo(id);
 
         return z;
+    }
+
+    //TODO
+    @Override
+    public Pavilion createPavilion(Pavilion pavilion) {
+        return pavilion;
+    }
+
+    @Override
+    public Caretaker createCaretaker(Caretaker caretaker) {
+        return caretaker;
     }
 
 //    @Override

@@ -2,9 +2,11 @@ package com.example.zooapplication.domain;
 
 //domain je vlastne to, co chceme uchovat v DB
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 //toto je nas objekt,ktery chce persistovat:}
 @Data
@@ -21,6 +23,10 @@ public class Zoo {
 
     @Column //mame to nejak pojmenovane, ale v tabulce ulozene jinak, tady se zrusilo to (name = "")
     private String city;
+
+    @OneToMany(mappedBy = "zoo")
+    @JsonManagedReference
+    private Set<Pavilion> pavilionSet; // zavislo?
 
 //    public String getName() {
 //        return name;

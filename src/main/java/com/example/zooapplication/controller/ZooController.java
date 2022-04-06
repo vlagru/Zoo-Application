@@ -1,5 +1,7 @@
 package com.example.zooapplication.controller;
 
+import com.example.zooapplication.domain.Caretaker;
+import com.example.zooapplication.domain.Pavilion;
 import com.example.zooapplication.domain.Zoo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +20,12 @@ public interface ZooController {
     @GetMapping("/zoo/{id}") // zadam jen !, provolavam / a cislo id
     Optional<Zoo> loadZoo(@PathVariable Long id); // optional kvuli nullu, tyto, kvuli odkazu na id tato anotace
 
+    @PostMapping("/pavilion/create")
+    Pavilion createPavilion(Pavilion pavilion);
 //    @GetMapping("/")
 //    String hello();
+
+    @PostMapping("/caretaker/create")
+    Caretaker createCaretaker(Caretaker caretaker);
 
 }
